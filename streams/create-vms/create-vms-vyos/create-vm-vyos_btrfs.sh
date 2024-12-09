@@ -49,8 +49,8 @@ then
         qm set $vmid --net${net} virtio,bridge=vmbr${provider},tag=${vlanid},macaddr=00:${provider}4:18:F${provider}:$(printf '%02d' $router):$(printf '%02d' $net)
     done
 
-    #import cloud-init-ISO
-	echo -e "${C}Importing cloud-init-ISO for router $vmid${NC}"
+    #import seed.iso
+	echo -e "${C}Importing seed.iso for router $vmid${NC}"
     qm set $vmid --ide2 media=cdrom,file=local-btrfs:iso/seed.iso
     #qm set $vmid --onboot 1
 fi
